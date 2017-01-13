@@ -5,9 +5,20 @@
   <title>{{ page.title }}</title>
 
   <style>
-    body {
-     font-family: Helvetica, Arial, sans-serif;
-    }
+
+   body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+   }
+
+   .container {
+     max-width: 38rem;
+     padding-left: 1rem;
+     padding-right: 1rem;
+     margin-left: auto;
+     margin-right: auto;
+   }
 
     a {
       color: navy;
@@ -23,13 +34,14 @@
   </style>
 </head>
 <body>
-
   {% include github.html %}
-  {% include pages.html %}
 
-  {{ content }}
+  <div class="container">
+   {% include pages.html %}
 
-  {% include footer.html %}
+   {{ content }}
 
+   {% include footer.html %}
+ </div>
 </body>
 </html>
