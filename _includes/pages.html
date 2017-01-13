@@ -4,10 +4,12 @@
   note: site.pages only include a index.html page -bug? why? why not??
     try site.documents for now
 
-  site.pages     | size:  {{ site.pages | size }}
-  site.documents | size:  {{ site.documents | size }}
+  site.pages      | size:  {{ site.pages | size }}  - note: includes css etc.
+  site.html_pages | size:  {{ site.html_pages | size }}
+  site.documents  | size:  {{ site.documents | size }}
 
-  note: do NOT use page for loop variable; page is a "reserverd" pre-defined global variable
+  note: check if we can use page for loop variable
+   e.g. page is a "reserverd" pre-defined global variable
 
   check auto-set settings:
   site.github.url  {{ site.github.url }}
@@ -16,12 +18,12 @@
 -->
 
 
-<div style="float: right; background-color: #eeeeee; padding: 4px; border: solid 1px silver; font-size: 80%;">
+<div style="float: right; background-color: #eeeeee; margin: 24px; padding: 4px; border: solid 1px silver; font-size: 80%;">
   <div>
-    <b>Pages</b> ({{ site.pages | size }})
+    <b>Pages</b> ({{ site.html_pages | size }})
   </div>
   <div>
-    {% for page in site.pages %}
+    {% for page in site.html_pages %}
        <a href="{{ page.url | relative_url }}">{{ page.title }}</a><br>
        <!--
            page.title: {{ page.title }}
