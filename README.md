@@ -5,7 +5,8 @@ see the [Hello, Pages! Theme V1](https://github.com/henrythemes/hello-pages-them
 for a more "basic" version. The V2 includes:
 
 - Custom master page layout template in `_layouts` e.g. `page.html`, etc.
-- Shared (common) template/page building blocks using `_includes` e.g. `github.html`, etc.
+- Shared (common) template/page building blocks using `_includes` e.g. `pages.html`, `footer.html`, `github.html`, etc.
+- Footer with last built time e.g. `{{ site.time }}` (and Jekyll version e.g. `{{ jekyll.version }}`)
 - And more
 
 

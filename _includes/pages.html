@@ -1,11 +1,26 @@
 
 
-<div style="float: right; background: silver; border: solid 1px black;">
+<!--
+  note: site.pages only include a index.html page -bug? why? why not??
+    try site.documents for now
+
+  site.documents | size:  {{ site.documents | size }}
+  site.pages     | size:  {{ site.pages | size }}
+
+
+  check auto-set settings:
+  site.github.url  {{ site.github.url }}
+  site.baseurl     {{ site.baseurl }}
+  site.url         {{ site.url }}
+-->
+
+
+<div style="float: right; background: grey; padding: 4px; border: solid 1px black;">
   <div>
-    <b>Pages</b>
+    <b>Pages ({{ site.documents | size }}) </b>
   </div>
   <div>
-    {{ for page in site.pages }}
+    {{ for page in site.documents }}
        <a href="{{ page.url | relative_url }}">{{ page.title }}</a><br>
     {{ endfor }}
   </div>
