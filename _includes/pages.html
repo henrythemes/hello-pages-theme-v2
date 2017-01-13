@@ -18,11 +18,16 @@
 
 <div style="float: right; background-color: #eeeeee; padding: 4px; border: solid 1px silver; font-size: 80%;">
   <div>
-    <b>Pages ({{ site.pages | size }}) </b>
+    <b>Pages</b> ({{ site.pages | size }})
   </div>
   <div>
-    {{ for doc in site.pages }}
-       <a href="{{ doc.url | relative_url }}">{{ doc.title }}</a><br>
-    {{ endfor }}
+    {% for page in site.pages %}
+       <a href="{{ page.url | relative_url }}">{{ page.title }}</a><br>
+       <!--
+           page.title: {{ page.title }}
+           page.date:  {{ page.date }}
+           page.id:    {{ page.id }}
+         -->
+    {% endfor %}
   </div>
 </div>
